@@ -30,23 +30,42 @@ Example: Running a Wi-Fi Test Script
 /tools/aircrack_test.sh <INTERFACE> <NETWORK_NAME>
 ```
 
+Replace `<INTERFACE>` with the network interface (e.g., wlan0) and `<NETWORK_NAME>` with the target Wi-Fi network name.
+Use config.env
+
+```shell
+docker run --rm -it --privileged --net=host \
+  --env-file=config.env \
+  ethical-hacking bash /tools/aircrack_test.sh
+```
+
+Execute discover network script
+```shell
+/tools/discover_network.sh
+```
+
+```shell
+docker run --rm -it --privileged --net=host ethical-hacking bash /tools/discover_networks.sh
+```
+
 ## Precautions
-### Legal Authorization:
+1. Legal Authorization:
+- This container is strictly intended for authorized use only. Ensure you have explicit permission from the network owner before performing any tests.
+- Unauthorized use of these tools may violate laws and regulations and can result in severe penalties.
 
-This container is strictly intended for authorized use only. Ensure you have explicit permission from the network owner before performing any tests.
-Unauthorized use of these tools may violate laws and regulations and can result in severe penalties.
-Ethical Use:
+2. Ethical Use:
+- This container is designed for educational purposes, vulnerability assessment, and network hardening.
+- Do not use this container for malicious purposes or unauthorized hacking.
 
-This container is designed for educational purposes, vulnerability assessment, and network hardening.
-Do not use this container for malicious purposes or unauthorized hacking.
+3. Security:
+- Ensure you run the container in a secure environment to avoid misuse.
+- Avoid running the container on untrusted networks without proper isolation.
 
-## Security:
+## Disclaimer
+- The authors of this container are not responsible for any misuse or damages caused by the improper use of this software.
+- Always adhere to local laws and ethical guidelines when performing penetration testing or vulnerability assessments.
+- This container is provided "as is," with no guarantees of accuracy or fitness for a particular purpose.
 
-Ensure you run the container in a secure environment to avoid misuse.
-Avoid running the container on untrusted networks without proper isolation.
-Disclaimer
-The authors of this container are not responsible for any misuse or damages caused by the improper use of this software.
-Always adhere to local laws and ethical guidelines when performing penetration testing or vulnerability assessments.
-This container is provided "as is," with no guarantees of accuracy or fitness for a particular purpose.
-Contributions
+## Contributions
+
 Feel free to contribute by submitting pull requests or opening issues on the GitHub repository. Together, we can improve this tool for ethical hacking and network security.
